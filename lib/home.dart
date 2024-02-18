@@ -1,5 +1,6 @@
-// ignore_for_file: prefer_const_constructors, sort_child_properties_last
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last, depend_on_referenced_packages
 
+import 'package:blood_pressure/details.dart';
 import 'package:blood_pressure/infopage.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -88,9 +89,13 @@ class _HomeScreenState extends State<HomeScreen> {
                         borderRadius: BorderRadius.circular(15.0))),
               ),
               Gap(50),
-              ElevatedButton(
+              ElevatedButton.icon(
                 onPressed: _validateAndNavigate,
-                child: Text(
+                icon: Icon(
+                  Icons.keyboard_double_arrow_right_sharp,
+                  color: Colors.white,
+                ),
+                label: Text(
                   'Show Info',
                   style: TextStyle(
                     color: Colors.white,
@@ -103,6 +108,22 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                     minimumSize: Size(150, 50)),
               ),
+              Gap(20),
+              ElevatedButton.icon(
+                  onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) => DetailsPage(),
+                      ),
+                    );
+                  },
+                  icon: Icon(Icons.report),
+                  label: Text(
+                    "Blood Pressure Chart",
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ))
             ],
           ),
         ),
