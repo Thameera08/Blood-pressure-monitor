@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last, depend_on_referenced_packages
 
-import 'package:blood_pressure/details.dart';
-import 'package:blood_pressure/infopage.dart';
+import 'package:blood_pressure/screens/details.dart';
+import 'package:blood_pressure/screens/infopage.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 

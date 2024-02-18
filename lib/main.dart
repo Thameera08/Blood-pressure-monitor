@@ -1,4 +1,4 @@
-import 'package:blood_pressure/home.dart';
+import 'package:blood_pressure/screens/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {

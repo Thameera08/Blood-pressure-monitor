@@ -1,6 +1,6 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors_in_immutables, prefer_const_constructors, deprecated_member_use
 
-import 'package:blood_pressure/home.dart';
+import 'package:blood_pressure/screens/home.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
