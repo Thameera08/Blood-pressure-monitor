@@ -51,16 +51,25 @@ class InformationScreen extends StatelessWidget {
               children: [
                 Text(
                   'Systolic: ${inputData['systolic']}',
-                  style: TextStyle(fontSize: 18.0),
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 Text(
                   'Diastolic: ${inputData['diastolic']}',
-                  style: TextStyle(fontSize: 18.0),
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
                 SizedBox(height: 20),
                 Text(
                   'Category: $category',
-                  style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ],
             ),

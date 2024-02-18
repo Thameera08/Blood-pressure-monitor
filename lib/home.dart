@@ -1,7 +1,8 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last
 
 import 'package:blood_pressure/infopage.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -48,8 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return 
-    Scaffold(
+    return Scaffold(
       appBar: AppBar(
         title: Text(
           'Blood Pressure Input Page',
@@ -59,28 +59,52 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: EdgeInsets.all(20.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextField(
-              controller: systolicController,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(labelText: 'Systolic'),
-            ),
-            SizedBox(height: 20),
-            TextField(
-              controller: diastolicController,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(labelText: 'Diastolic'),
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: _validateAndNavigate,
-              child: Text('Show Info'),
-            ),
-          ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                "assets/images/bp.png",
+                width: 250,
+              ),
+              Gap(50),
+              TextField(
+                controller: systolicController,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                    labelText: 'Systolic',
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15.0))),
+              ),
+              SizedBox(height: 20),
+              TextField(
+                controller: diastolicController,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                    labelText: 'Diastolic',
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(15.0))),
+              ),
+              Gap(50),
+              ElevatedButton(
+                onPressed: _validateAndNavigate,
+                child: Text(
+                  'Show Info',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.red,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0),
+                    ),
+                    minimumSize: Size(150, 50)),
+              ),
+            ],
+          ),
         ),
       ),
     );
