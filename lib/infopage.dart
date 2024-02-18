@@ -2,6 +2,7 @@
 
 import 'package:blood_pressure/home.dart';
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 class InformationScreen extends StatelessWidget {
   final Map<String, int> inputData;
@@ -49,6 +50,11 @@ class InformationScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                Image.asset(
+                  "assets/images/result.png",
+                  width: 200,
+                ),
+                Gap(50),
                 Text(
                   'Systolic: ${inputData['systolic']}',
                   style: TextStyle(
